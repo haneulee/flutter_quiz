@@ -24,5 +24,9 @@ cd backend
 python3 -m venv venv
 source venv/bin/activate
 pip install django djangorestframework
-django-admin startproject [name]
+django-admin startproject [name] .
 python manage.py startapp quiz
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+python manage.py createsuperuser
