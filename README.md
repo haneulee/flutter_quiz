@@ -30,3 +30,29 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 python manage.py createsuperuser
+
+pip install django-cors-headers gunicorn psycopg2-binary whitenoise dj-database-url
+
+django-cors-headers : 코스 에러 방지
+gunicorn : 배포 툴
+psycopg2-binary, dj-database-url : heroku에서 사용하는 db인  postgresql을 사용하기 위한 패키지
+whitenoise : 정적 파일의 사용을 돕는 미들웨어
+
+
+pip freeze > requirements.txt
+
+brew install heroku/brew/heroku : 헤로쿠 cli 설치
+
+heroku login
+
+heroku create [name]
+
+
+<!-- heroku git:remote -a drf-quiz-app (최상위 루트에 생성해야 함) -->
+
+git push heroku master
+
+heroku run python manage.py migrate
+
+heroku run python manage.py createsuperuser
+
